@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Moses Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mosliu.github.io/"/>
+  <updated>2017-02-13T06:07:12.817Z</updated>
+  <id>http://mosliu.github.io/</id>
+  
+  <author>
+    <name>Moses</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CAC服务器搭建SS</title>
+    <link href="http://mosliu.github.io/2017/02/13/CAC%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASS/"/>
+    <id>http://mosliu.github.io/2017/02/13/CAC服务器搭建SS/</id>
+    <published>2017-02-13T01:27:07.000Z</published>
+    <updated>2017-02-13T06:07:12.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>CAC的服务器 除了便宜，其他的是一无是处啊</p>
+<p>磁盘速度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">dd if=/dev/zero of=test bs=64k count=4k oflag=dsync</div><div class="line">^C1430+0 records in</div><div class="line">1430+0 records out</div><div class="line">93716480 bytes (94 MB) copied, 203.847 s, 460 kB/s</div></pre></td></tr></table></figure>
+<p>速度，连续的断啊。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">104.233.101.165 的 Ping 统计信息:</div><div class="line">    数据包: 已发送 = 26，已接收 = 11，丢失 = 15 (57% 丢失)，</div><div class="line">往返行程的估计时间(以毫秒为单位):</div><div class="line">    最短 = 283ms，最长 = 285ms，平均 = 284ms</div></pre></td></tr></table></figure>
+<p>搭建，用秋水go版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</div><div class="line">chmod +x shadowsocks-go.sh</div><div class="line">./shadowsocks-go.sh 2&gt;&amp;1 | tee shadowsocks-go.log</div><div class="line">netstat -nlp</div></pre></td></tr></table></figure>
+<p>最后查看 如果有 ::8888(假设你设置的端口是8888) 那么就成功了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CAC的服务器 除了便宜，其他的是一无是处啊&lt;/p&gt;
+&lt;p&gt;磁盘速度：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div 
+    
+    </summary>
+    
+    
+      <category term="CAC" scheme="http://mosliu.github.io/tags/CAC/"/>
+    
+      <category term="VPS" scheme="http://mosliu.github.io/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Hostinger空间上搭建gitserver</title>
+    <link href="http://mosliu.github.io/2017/02/09/%E5%9C%A8Hostinger%E7%A9%BA%E9%97%B4%E4%B8%8A%E6%90%AD%E5%BB%BAgitserver/"/>
+    <id>http://mosliu.github.io/2017/02/09/在Hostinger空间上搭建gitserver/</id>
+    <published>2017-02-09T03:26:27.000Z</published>
+    <updated>2017-02-13T06:11:07.417Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>两年前买了一个Hostinger空间。ping值在110左右，还行吧。。</p>
+<p>前一段偶尔发现空间可以支持git命令</p>
+<p>遂想到，可以做自己的git服务器。大善大善。</p>
+<p>虽然只能用自己的用户名，但是还是自己的服务器啊，挺好，挺好。</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+<li><p>服务器端，建立一个文件夹，假设叫git/my.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir git</div><div class="line">cd git</div><div class="line">mkdir my.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init --bare</div></pre></td></tr></table></figure>
+<p>系统提示：</p>
+<p><code>Initialized empty Git repository in /home/u55555555555/git/my.git/</code></p>
+<p>其中的u55555555555 是你的用户名</p>
+<p>这样就建好了。</p>
+</li>
+<li><p>使用<br>回到windows，直接迁出就可以了</p>
+<p>其中ip地址为你的ssh登录的地址，60000是你的端口号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone ssh://u55555555555@31.220.111.111:60000/home/u55555555555/gitrepo/</div></pre></td></tr></table></figure>
+</li>
+<li><p>基本应用，献丑了。</p>
+</li>
+</ol>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><ul>
+<li><p>经体验，是可以使用key登录的，不用每次输密码了！</p>
+<ol>
+<li>在home（~）下面 新建文件夹</li>
+<li>进入.ssh后，新建文件<code>touch authorized_keys</code></li>
+<li><p>设置文件夹和文件的权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">mkdir .ssh &amp;&amp; chmod 700 .ssh</div><div class="line">touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys</div></pre></td></tr></table></figure>
+</li>
+<li><p>导入你的公钥，假设放在了/tmp下的id_rsa.pub</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /tmp/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;两年前买了一个Hostinger空间。ping值在110左右，还行吧。。&lt;/p&gt;
+&lt;p&gt;前一段偶尔发现空间可以支持git命令&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+    
+      <category term="VPS" scheme="http://mosliu.github.io/tags/VPS/"/>
+    
+      <category term="Hostinger" scheme="http://mosliu.github.io/tags/Hostinger/"/>
+    
+      <category term="git" scheme="http://mosliu.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两个科学上网的DNS</title>
+    <link href="http://mosliu.github.io/2017/02/09/%E4%B8%A4%E4%B8%AA%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84DNS/"/>
+    <id>http://mosliu.github.io/2017/02/09/两个科学上网的DNS/</id>
+    <published>2017-02-09T03:22:25.000Z</published>
+    <updated>2017-02-13T06:11:45.242Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Mogu-DNS"><a href="#Mogu-DNS" class="headerlink" title="Mogu DNS"></a>Mogu DNS</h2><p><strong>官方网站</strong> – 科学上网+广告过滤</p>
+<p><strong>北方推荐：</strong>122.114.245.45</p>
+<p><strong>南方推荐：</strong>115.159.96.69</p>
+<h2 id="Pure-DNS"><a href="#Pure-DNS" class="headerlink" title="Pure DNS"></a>Pure DNS</h2><p><strong>官方网站</strong> – 科学上网+广告过滤</p>
+<p><strong>北方推荐：</strong>123.207.137.88</p>
+<p><strong>南方推荐：</strong>115.159.220.214</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Mogu-DNS&quot;&gt;&lt;a href=&quot;#Mogu-DNS&quot; class=&quot;headerlink&quot; title=&quot;Mogu DNS&quot;&gt;&lt;/a&gt;Mogu DNS&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;官方网站&lt;/strong&gt; – 科学上网+广告过滤&lt;/p&gt;
+&lt;p&gt;&lt;stro
+    
+    </summary>
+    
+    
+      <category term="dns" scheme="http://mosliu.github.io/tags/dns/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新建一个托管在Github上的Hexo博客（windows平台）</title>
+    <link href="http://mosliu.github.io/2017/02/08/%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%89%98%E7%AE%A1%E5%9C%A8Github%E4%B8%8A%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://mosliu.github.io/2017/02/08/新建一个托管在Github上的Hexo博客/</id>
+    <published>2017-02-08T07:58:40.000Z</published>
+    <updated>2017-02-13T06:11:25.766Z</updated>
+    
+    <content type="html"><![CDATA[<p>安装时碰到几个要点</p>
+<p>从头到尾写一下</p>
+<h1 id="1-安装git-、nodejs"><a href="#1-安装git-、nodejs" class="headerlink" title="1. 安装git 、nodejs"></a>1. 安装git 、nodejs</h1><p>不细写了。自己google吧。很简单的。</p>
+<ol>
+<li>（其实是很早就安好了，没再安，嘿嘿）</li>
+</ol>
+<h1 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h1><p>参考 <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a>网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+<h1 id="3-Github配置"><a href="#3-Github配置" class="headerlink" title="3. Github配置"></a>3. Github配置</h1><ul>
+<li><p>建立github.io仓库</p>
+<p>假设你的用户名是mosliu<br>那么新建一个名字为mosliu.github.io的repository<br>就可以直接通过<a href="mosliu.github.io">mosliu.github.io</a>访问了</p>
+</li>
+<li><p>生成public key对</p>
+<p>通过命令<code>ssh-keygen -t rsa -C &quot;XXX@gmail.com&quot;</code>生成私钥和公钥，XXX@gmail.com替换成自己的邮箱<br>这里我有个惨痛的教训，我电脑上装了好几套linux指令集。然后生成时候，直接在cmd下生成了，结果后期部署的时候就会出问题！后来找了半天发现 原因是调用的git和我默认的git不是一个啊不是一个。其实主要问题就是秘钥存放位置问题。这里建议使用<strong>git bash</strong>生成。</p>
+<p>生成后，将公钥添加到github里面。</p>
+</li>
+<li><p>测试</p>
+<p>使用<code>ssh -T git@github.com</code></p>
+<p>如果看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
+<p>就成功了</p>
+</li>
+<li><p>设置username和email</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;你的用户名&quot;  </div><div class="line">git config --global user.email &quot;你的github登录的邮箱&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="4-查看本地"><a href="#4-查看本地" class="headerlink" title="4. 查看本地"></a>4. 查看本地</h1><p>访问127.0.0.1:4000能看到，里面怎么新建 网页都有的。</p>
+<h1 id="5-发布"><a href="#5-发布" class="headerlink" title="5. 发布"></a>5. 发布</h1><p>通过使用hexo g -d命令来发布。</p>
+<p>之前需要先到_config.yml 文件中设置一下最下面的deploy设置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> git@github.com:mosliu/mosliu.github.io.git</div><div class="line">  <span class="comment">#repo: http://github.com/mosliu/mosliu.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> master</div><div class="line"><span class="attr">  message:</span> <span class="string">"Hexo Deploy updated: <span class="template-variable">&#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</span>"</span></div></pre></td></tr></table></figure>
+<p>上面的mosliu改成你的用户名。</p>
+<h1 id="6-一点小问题的解决"><a href="#6-一点小问题的解决" class="headerlink" title="6. 一点小问题的解决"></a>6. 一点小问题的解决</h1><ol>
+<li>提交时候回提示一堆的</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">warning: LF will be replaced by CRLF in baidusitemap.xml.</div><div class="line">The file will have its original line endings in your working directory.</div><div class="line">warning: LF will be replaced by CRLF in categories/index.html.</div><div class="line">The file will have its original line endings in your working directory.</div></pre></td></tr></table></figure>
+<p>使用一个命令就可以解决了</p>
+<p><code>git config –global core.autocrlf false</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装时碰到几个要点&lt;/p&gt;
+&lt;p&gt;从头到尾写一下&lt;/p&gt;
+&lt;h1 id=&quot;1-安装git-、nodejs&quot;&gt;&lt;a href=&quot;#1-安装git-、nodejs&quot; class=&quot;headerlink&quot; title=&quot;1. 安装git 、nodejs&quot;&gt;&lt;/a&gt;1. 安装git
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://mosliu.github.io/tags/git/"/>
+    
+      <category term="hexo" scheme="http://mosliu.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://mosliu.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://mosliu.github.io/2017/02/08/test/"/>
+    <id>http://mosliu.github.io/2017/02/08/test/</id>
+    <published>2017-02-08T07:17:29.000Z</published>
+    <updated>2017-02-08T07:17:30.011Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My Hexo First Post</title>
+    <link href="http://mosliu.github.io/2017/02/08/My-Hexo-First-Post/"/>
+    <id>http://mosliu.github.io/2017/02/08/My-Hexo-First-Post/</id>
+    <published>2017-02-08T06:53:16.000Z</published>
+    <updated>2017-02-08T06:53:17.442Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://mosliu.github.io/2017/02/08/hello-world/"/>
+    <id>http://mosliu.github.io/2017/02/08/hello-world/</id>
+    <published>2017-02-08T06:36:38.104Z</published>
+    <updated>2017-02-08T06:36:38.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
