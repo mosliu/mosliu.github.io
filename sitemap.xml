@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mosliu.github.io/2017/02/08/test/</loc>
+    
+    <lastmod>2017-02-13T07:45:40.236Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mosliu.github.io/about/index.html</loc>
     
     <lastmod>2017-02-13T06:12:36.547Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://mosliu.github.io/categories/index.html</loc>
     
     <lastmod>2017-02-13T05:29:59.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mosliu.github.io/2017/02/08/test/</loc>
-    
-    <lastmod>2017-02-08T07:17:30.011Z</lastmod>
     
   </url>
   
