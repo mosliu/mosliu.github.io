@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mosliu.github.io</id>
     <title>低技术</title>
-    <updated>2020-05-22T01:23:59.046Z</updated>
+    <updated>2020-05-25T01:52:05.106Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mosliu.github.io"/>
     <link rel="self" href="https://mosliu.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://mosliu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 低技术</rights>
     <entry>
-        <title type="html"><![CDATA[京东 跌蛋糕脚本（转载）]]></title>
+        <title type="html"><![CDATA[京东 叠蛋糕脚本（转载）]]></title>
         <id>https://mosliu.github.io/post/jing-dong-die-dan-gao-jiao-ben-zhuan-zai/</id>
         <link href="https://mosliu.github.io/post/jing-dong-die-dan-gao-jiao-ben-zhuan-zai/">
         </link>
@@ -21,19 +21,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>618京东叠蛋糕 脚本 免费用全自动</p>
 <p>链接: https://pan.baidu.com/s/1vvZqFoD4lkv2n49GR_YFGw 提取码: effb</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://mosliu.github.io/post/hello-gridea/</id>
-        <link href="https://mosliu.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 ]]></content>
     </entry>
     <entry>
