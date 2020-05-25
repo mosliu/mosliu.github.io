@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的朋友们 | 低技术</title>
+<title>关于Lowjs.com | 低技术</title>
 <meta name="description" content="个人技术学习" />
 <link rel="shortcut icon" href="https://mosliu.github.io/favicon.ico">
 <link rel="stylesheet" href="https://mosliu.github.io/styles/main.css">
@@ -14,11 +14,19 @@
 <script src="https://mosliu.github.io/media/js/view-image.min.js"></script>
 <script src="https://mosliu.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://mosliu.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="🏠 关于本站
+特此声明 网站名是** 个人技术学习** 特意注明，北岸要求的。
+lowjs，表示我写的js代码很low，毕竟我是写java的。
+👨‍💻 博主是谁
+我 Mose  传说中的 全干 全栈程序员
+⛹ 兴趣爱好
+Gridea的..." />
+    <meta name="keywords" content="" />
+    <script src="https://mosliu.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://mosliu.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -85,24 +93,103 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/gridea.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2019-01-25"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              
+              <a href="https://mosliu.github.io/about/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/about/"> </span>
+              </a>
+              <span id="/about/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+              </div>
+              <h1 class="title ularge white bold">关于Lowjs.com</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="关于本站">🏠 关于本站</h2>
+<p>特此声明 网站名是** 个人技术学习** 特意注明，北岸要求的。<br>
+lowjs，表示我写的js代码很low，毕竟我是写java的。</p>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<p>我 Mose  传说中的 <s>全干</s> 全栈程序员</p>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<p>Gridea的模板问的太多了吧。</p>
+<h2 id="联系我呀">📬 联系我呀</h2>
+<p>admin@liuxuan.net<br>
+@mosliu</p>
 
-          <div class="widget_tag_cloud tagcloud">
-          
+                </div>
+                <div class="clear"></div>
+                
+              </section>
+            </article>
+            <div class="clear"></div>
+            <section class="yiyan section">
+              <article>
+                <div class="text">
+                  <blockquote class="blockquote-center">
+                    一言：<span id="hitokoto">:D 获取中...</span>
+                  </blockquote>
+                  <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+                </div>
+            </article>
+              <div class="clear"></div>
+            </section>
+            <section class="related section">
+              
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
-          
-          </div>
-        </div>
+              <div id="comments" class="bg-white hosted ">
+                
+                  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-        </div>
+<div id="gitalk-container"></div>
+<div class="clear"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '9707f3b839f3e029701f',
+    clientSecret: '2a1677db9ff1b7d99b7417c38719a704e048c48a',
+    repo: 'savegitalk',
+    owner: 'mosliu',
+    admin: ['mosliu'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+                
+                
+              </div>
+            
+
+            </div>
           </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -249,6 +336,9 @@
     })
 </script>
     
+
+      
+    <script src="https://mosliu.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
