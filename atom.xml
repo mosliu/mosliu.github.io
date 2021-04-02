@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://mosliu.github.io</id>
+    <id>https://lowjs.com</id>
     <title>低技术</title>
-    <updated>2021-01-14T02:34:06.943Z</updated>
+    <updated>2021-04-02T01:43:31.875Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://mosliu.github.io"/>
-    <link rel="self" href="https://mosliu.github.io/atom.xml"/>
+    <link rel="alternate" href="https://lowjs.com"/>
+    <link rel="self" href="https://lowjs.com/atom.xml"/>
     <subtitle>个人技术学习</subtitle>
-    <logo>https://mosliu.github.io/images/avatar.png</logo>
-    <icon>https://mosliu.github.io/favicon.ico</icon>
+    <logo>https://lowjs.com/images/avatar.png</logo>
+    <icon>https://lowjs.com/favicon.ico</icon>
     <rights>All rights reserved 2021, 低技术</rights>
     <entry>
         <title type="html"><![CDATA[ES 分词导致查询不到情况的解析]]></title>
-        <id>https://mosliu.github.io/post/Why_ES_can_not_find_my_word/</id>
-        <link href="https://mosliu.github.io/post/Why_ES_can_not_find_my_word/">
+        <id>https://lowjs.com/post/Why_ES_can_not_find_my_word/</id>
+        <link href="https://lowjs.com/post/Why_ES_can_not_find_my_word/">
         </link>
         <updated>2021-01-14T01:38:31.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="问题">问题</h1>
@@ -25,75 +25,73 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[群晖 安装 zerotier已及配置moon]]></title>
-        <id>https://mosliu.github.io/post/synologo_install_zerotier_and_configure_moon/</id>
-        <link href="https://mosliu.github.io/post/synologo_install_zerotier_and_configure_moon/">
+        <id>https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/</id>
+        <link href="https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/">
         </link>
         <updated>2020-12-07T02:43:10.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="下载">下载</h1>
-<p>是zerotier提供的，而不是群晖提供的。<br>
-地址：https://download.zerotier.com/dist/synology/<br>
-可安装自己的cpu选择下载</p>
-<h1 id="安装">安装</h1>
-<p>在套件中心，选择手动安装，选择下载的文件，安装<br>
-会提示没有证书，略过<br>
-检查设置，进行安装</p>
+        <summary type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>如何在群晖上安装zerotier 和 配置moon的指南</p>
 ]]></summary>
-        <content type="html"><![CDATA[<h1 id="下载">下载</h1>
-<p>是zerotier提供的，而不是群晖提供的。<br>
-地址：https://download.zerotier.com/dist/synology/<br>
-可安装自己的cpu选择下载</p>
-<h1 id="安装">安装</h1>
-<p>在套件中心，选择手动安装，选择下载的文件，安装<br>
-会提示没有证书，略过<br>
-检查设置，进行安装</p>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>如何在群晖上安装zerotier 和 配置moon的指南</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[群晖，安装第三方套件]]></title>
-        <id>https://mosliu.github.io/post/Synology_install_third_party_plugins/</id>
-        <link href="https://mosliu.github.io/post/Synology_install_third_party_plugins/">
+        <id>https://lowjs.com/post/Synology_install_third_party_plugins/</id>
+        <link href="https://lowjs.com/post/Synology_install_third_party_plugins/">
         </link>
         <updated>2020-12-07T02:18:29.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>群晖，如何添加第三方套件介绍</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>群晖，如何添加第三方套件介绍</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[群晖 moments 不分类图片 一直提示 还有XXX张照片待发现 问题解决]]></title>
-        <id>https://mosliu.github.io/post/solve_synology_moments_not_classify/</id>
-        <link href="https://mosliu.github.io/post/solve_synology_moments_not_classify/">
+        <id>https://lowjs.com/post/solve_synology_moments_not_classify/</id>
+        <link href="https://lowjs.com/post/solve_synology_moments_not_classify/">
         </link>
         <updated>2020-12-07T01:28:55.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[曲线安装PVE6.3，绕过白屏]]></title>
-        <id>https://mosliu.github.io/post/install_pve6_3_by_indirect_way/</id>
-        <link href="https://mosliu.github.io/post/install_pve6_3_by_indirect_way/">
+        <id>https://lowjs.com/post/install_pve6_3_by_indirect_way/</id>
+        <link href="https://lowjs.com/post/install_pve6_3_by_indirect_way/">
         </link>
         <updated>2020-12-02T01:29:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>在暴风酷播云上，绕过白屏安装PVE6.3。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在暴风酷播云上，绕过白屏安装PVE6.3。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[解决 国内go get 超时问题]]></title>
-        <id>https://mosliu.github.io/post/jie-jue-guo-nei-go-get-chao-shi-wen-ti/</id>
-        <link href="https://mosliu.github.io/post/jie-jue-guo-nei-go-get-chao-shi-wen-ti/">
+        <id>https://lowjs.com/post/jie-jue-guo-nei-go-get-chao-shi-wen-ti/</id>
+        <link href="https://lowjs.com/post/jie-jue-guo-nei-go-get-chao-shi-wen-ti/">
         </link>
         <updated>2020-11-03T08:40:41.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[ hadoop datanode节点硬盘迁移至其他服务器的步骤]]></title>
-        <id>https://mosliu.github.io/post/hadoop-datanode-jie-dian-ying-pan-qian-yi-zhi-qi-ta-fu-wu-qi-de-bu-zou/</id>
-        <link href="https://mosliu.github.io/post/hadoop-datanode-jie-dian-ying-pan-qian-yi-zhi-qi-ta-fu-wu-qi-de-bu-zou/">
+        <id>https://lowjs.com/post/hadoop-datanode-jie-dian-ying-pan-qian-yi-zhi-qi-ta-fu-wu-qi-de-bu-zou/</id>
+        <link href="https://lowjs.com/post/hadoop-datanode-jie-dian-ying-pan-qian-yi-zhi-qi-ta-fu-wu-qi-de-bu-zou/">
         </link>
         <updated>2020-10-26T02:52:08.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Joplin 真香]]></title>
-        <id>https://mosliu.github.io/post/joplin-zhen-xiang/</id>
-        <link href="https://mosliu.github.io/post/joplin-zhen-xiang/">
+        <id>https://lowjs.com/post/joplin-zhen-xiang/</id>
+        <link href="https://lowjs.com/post/joplin-zhen-xiang/">
         </link>
         <updated>2020-10-19T01:32:06.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[学习利器---anki+utools+沙拉查词]]></title>
-        <id>https://mosliu.github.io/post/xue-xi-li-qi-ankiutoolssha-la-cha-ci/</id>
-        <link href="https://mosliu.github.io/post/xue-xi-li-qi-ankiutoolssha-la-cha-ci/">
+        <id>https://lowjs.com/post/xue-xi-li-qi-ankiutoolssha-la-cha-ci/</id>
+        <link href="https://lowjs.com/post/xue-xi-li-qi-ankiutoolssha-la-cha-ci/">
         </link>
         <updated>2020-08-31T02:34:20.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="序">序</h1>
@@ -105,8 +103,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[使用N1 中转网络数据]]></title>
-        <id>https://mosliu.github.io/post/n1-route-between_twonet/</id>
-        <link href="https://mosliu.github.io/post/n1-route-between_twonet/">
+        <id>https://lowjs.com/post/n1-route-between_twonet/</id>
+        <link href="https://lowjs.com/post/n1-route-between_twonet/">
         </link>
         <updated>2020-07-16T01:43:52.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="问题">问题</h1>

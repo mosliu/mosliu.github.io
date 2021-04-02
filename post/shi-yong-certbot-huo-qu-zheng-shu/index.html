@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>synology | 低技术</title>
+<title>使用certbot 获取证书 | 低技术</title>
 <meta name="description" content="个人技术学习" />
 <link rel="shortcut icon" href="https://lowjs.com/favicon.ico">
 <link rel="stylesheet" href="https://lowjs.com/styles/main.css">
@@ -14,11 +14,14 @@
 <script src="https://lowjs.com/media/js/view-image.min.js"></script>
 <script src="https://lowjs.com/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://lowjs.com/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="为啥用这玩意
+安装的caddy2，获取证书总是失败，无奈之下，先使用的tencent云的证书，还是不如泛域名证书好用，尝试使用certbot手动获取证书，但是域名又不在cloudfaire上，所以又引入了一个插件来执行域名验证，具体步骤如下..." />
+    <meta name="keywords" content="" />
+    <script src="https://lowjs.com/media/js/waterfall.min.js"></script>
+    <script src="https://lowjs.com/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -85,71 +88,187 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('/media/images/gridea.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-22"><i class="fa fa-calendar"></i><span class="lately">10 个月前</span></time>
+              
+              <a href="https://lowjs.com/post/shi-yong-certbot-huo-qu-zheng-shu/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/shi-yong-certbot-huo-qu-zheng-shu/"> </span>
+              </a>
+              <span id="/shi-yong-certbot-huo-qu-zheng-shu/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
                 
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># synology</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_960_720.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-12-07">2020-12-07</time>
-          <h4 class="title usmall">
-            <a href="https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/">群晖 安装 zerotier已及配置moon</a>
-          </h4>
-        </div>
-      </article>
+              </div>
+              <h1 class="title ularge white bold">使用certbot 获取证书</h1>
+            </div>
+          </div>
+        </div>  
 
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://lowjs.com/post/Synology_install_third_party_plugins/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://cdn.pixabay.com/photo/2020/04/11/15/36/easter-5030905_960_720.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-12-07">2020-12-07</time>
-          <h4 class="title usmall">
-            <a href="https://lowjs.com/post/Synology_install_third_party_plugins/">群晖，安装第三方套件</a>
-          </h4>
-        </div>
-      </article>
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="为啥用这玩意">为啥用这玩意</h1>
+<p>安装的caddy2，获取证书总是失败，无奈之下，先使用的tencent云的证书，还是不如泛域名证书好用，尝试使用certbot手动获取证书，但是域名又不在cloudfaire上，所以又引入了一个插件来执行域名验证，具体步骤如下：</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://lowjs.com/post-images/1590116631908.svg" alt="" loading="lazy"></figure>
+<h1 id="安装">安装</h1>
+<ol>
+<li>查验python版本在2,6以上，我的是2.7 很正常</li>
+</ol>
+<pre><code>cd /usr/bin
+rm -rf python
+ln -s /usr/bin/python2.7 /usr/bin/python
+</code></pre>
+<ol start="2">
+<li>检查pip是否安装，如果未安装，则安装pip</li>
+</ol>
+<pre><code>  https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  python get-pip.py 
+</code></pre>
+<ol start="3">
+<li>添加pip国内源</li>
+</ol>
+<pre><code># 新建 .pip 文件夹并进入
+mkdir .pip &amp;&amp; cd .pip
+# 创建 pip.conf 文件
+vi pip.conf
+# 在 pip.conf 文件中输入以下内容
+[global]
+index-url=http://mirrors.aliyun.com/pypi/simple/
+[install]
+trusted-host=mirrors.aliyun.com
+# 保存退出
+</code></pre>
+<ol start="4">
+<li>安装 certbot-auto</li>
+</ol>
+<pre><code>sudo apt-get remove certbot
+wget https://dl.eff.org/certbot-auto
+ sudo mv certbot-auto /usr/local/bin/certbot-auto
+ sudo chown root /usr/local/bin/certbot-auto
+ sudo chmod 0755 /usr/local/bin/certbot-auto
+</code></pre>
+<ol start="5">
+<li>安装certbot-letencrypt-wildcardcertificates-alydns-au<br>
+这个是一个针对certbot的扩展，可以扩展到阿里云、腾讯云、华为云等域名注册商<br>
+<a href="https://github.com/ywdblog/certbot-letencrypt-wildcardcertificates-alydns-au">地址</a></li>
+</ol>
+<pre><code> git clone https://github.com/ywdblog/certbot-letencrypt-wildcardcertificates-alydns-au
+ cd certbot-letencrypt-wildcardcertificates-alydns-au
+ chmod 0777 au.sh
+</code></pre>
+<p>将需要的appkey和appid填入au.sh<br>
+6. 测试申请</p>
+<pre><code> certbot-auto certonly -m admin@liuxuan.net -d *.lowjs.com --manual --preferred-challenges dns --dry-run  --manual-auth-hook &quot;/root/cert_au/au.sh python txy add&quot; --manual-cleanup-hook &quot;/root/cert_au/au.sh python txy clean&quot;
+</code></pre>
+<ol start="7">
+<li>执行申请</li>
+</ol>
+<pre><code>certbot-auto certonly -n -m admin@liuxuan.net -d *.lowjs.com -d lowjs.com --manual --preferred-challenges dns --manual-auth-hook &quot;/root/cert_au/au.sh python txy add&quot; --manual-cleanup-hook &quot;/root/cert_au/au.sh python txy clean&quot;
+</code></pre>
+<p>这里有一个坑，就是当你使用根域名时，泛域名不支持，需要额外加上根域名才可以。<br>
+8. 证书放入caddy执行位置，修改Caddyfile<br>
+9. 加上crontab</p>
+<pre><code>1 1 */1 * *  certbot-auto renew --cert-name lowjs.com --manual --preferred-challenges dns --manual --preferred-challenges dns --deploy-hook  &quot;cp /etc/letsencrypt/live/lowjs.com/fullchain.pem /etc/caddy/&amp;&amp;cp /etc/letsencrypt/live/lowjs.com/privkey.pem /etc/caddy/&amp;&amp;chmod 755 /etc/caddy/privkey.pem&amp;&amp;service caddy restart&quot; --manual-auth-hook &quot;/root/cert_au/au.sh python txy add&quot; --manual-cleanup-hook &quot;/root/cert_au/au.sh python txy clean&quot;
 
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://lowjs.com/post/solve_synology_moments_not_classify/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://cdn.pixabay.com/photo/2019/09/23/14/33/cable-4498748_960_720.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-12-07">2020-12-07</time>
-          <h4 class="title usmall">
-            <a href="https://lowjs.com/post/solve_synology_moments_not_classify/">群晖 moments 不分类图片 一直提示 还有XXX张照片待发现 问题解决</a>
-          </h4>
-        </div>
-      </article>
+</code></pre>
+<ol start="10">
+<li>收工</li>
+</ol>
 
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
+                </div>
+                <div class="clear"></div>
+                
+              </section>
+            </article>
+            <div class="clear"></div>
+            <section class="yiyan section">
+              <article>
+                <div class="text">
+                  <blockquote class="blockquote-center">
+                    一言：<span id="hitokoto">:D 获取中...</span>
+                  </blockquote>
+                  <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+                </div>
+            </article>
+              <div class="clear"></div>
+            </section>
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://lowjs.com/media/images/9oT6M-ml_.jpg');"></div>
+                 <a href="https://lowjs.com/post/solve_zsh_home_key/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-25">2020-05-25</time>
+                  <h4 class="title white no-margin">解决zsh中无法正常使用home和end等键的问题</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://lowjs.com/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/27/22/38/cake-1284548_960_720.jpg');"></div>
+                 <a href="https://lowjs.com/post/jing-dong-die-dan-gao-jiao-ben-zhuan-zai/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-22">2020-05-22</time>
+                  <h4 class="title white no-margin">京东 叠蛋糕脚本（转载）</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://lowjs.com/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
-                        <div class="epcl-pagination section">
-              <div class="nav">
+              <div id="comments" class="bg-white hosted ">
+                
+                  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<div class="clear"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '9707f3b839f3e029701f',
+    clientSecret: '2a1677db9ff1b7d99b7417c38719a704e048c48a',
+    repo: 'savegitalk',
+    owner: 'mosliu',
+    admin: ['mosliu'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
                 
                 
               </div>
-            </div>
             
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -366,6 +485,9 @@
     })
 </script>
     
+
+      
+    <script src="https://lowjs.com/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
