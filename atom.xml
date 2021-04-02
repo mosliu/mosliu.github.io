@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lowjs.com</id>
     <title>低技术</title>
-    <updated>2021-04-02T01:45:07.045Z</updated>
+    <updated>2021-04-02T02:02:50.055Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lowjs.com"/>
     <link rel="self" href="https://lowjs.com/atom.xml"/>
@@ -73,6 +73,12 @@
         <link href="https://lowjs.com/post/jie-jue-guo-nei-go-get-chao-shi-wen-ti/">
         </link>
         <updated>2020-11-03T08:40:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用七牛的Go proxy 代理</p>
+<p>export GOPROXY=https://goproxy.cn</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用七牛的Go proxy 代理</p>
+<p>export GOPROXY=https://goproxy.cn</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[ hadoop datanode节点硬盘迁移至其他服务器的步骤]]></title>
@@ -80,6 +86,12 @@
         <link href="https://lowjs.com/post/hadoop-datanode-jie-dian-ying-pan-qian-yi-zhi-qi-ta-fu-wu-qi-de-bu-zou/">
         </link>
         <updated>2020-10-26T02:52:08.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="摘要">摘要</h1>
+<p>服务器调整，直接移动了磁盘。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="摘要">摘要</h1>
+<p>服务器调整，直接移动了磁盘。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Joplin 真香]]></title>
@@ -87,6 +99,12 @@
         <link href="https://lowjs.com/post/joplin-zhen-xiang/">
         </link>
         <updated>2020-10-19T01:32:06.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="摘要">摘要</h1>
+<p>Joplin 真香</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="摘要">摘要</h1>
+<p>Joplin 真香</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[学习利器---anki+utools+沙拉查词]]></title>
