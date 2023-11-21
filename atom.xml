@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://lowjs.com</id>
+    <title>低技术</title>
+    <updated>2023-11-21T07:02:10.796Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://lowjs.com"/>
+    <link rel="self" href="https://lowjs.com/atom.xml"/>
+    <subtitle>个人技术学习</subtitle>
+    <logo>https://lowjs.com/images/avatar.png</logo>
+    <icon>https://lowjs.com/favicon.ico</icon>
+    <rights>All rights reserved 2023, 低技术</rights>
+    <entry>
+        <title type="html"><![CDATA[群晖安装蚁阅（antrss）]]></title>
+        <id>https://lowjs.com/post/qun-hui-an-zhuang-yi-yue-antrss/</id>
+        <link href="https://lowjs.com/post/qun-hui-an-zhuang-yi-yue-antrss/">
+        </link>
+        <updated>2022-10-03T07:08:59.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="起">起</h2>
+<p>准备在群晖上安装一下tinytinyrss和antrss比较一下，然后安装时发现，大部分网上的帖子你抄我，我抄你，很多配置不全，解释不对的地方。还是我自己整理一个吧</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="起">起</h2>
+<p>准备在群晖上安装一下tinytinyrss和antrss比较一下，然后安装时发现，大部分网上的帖子你抄我，我抄你，很多配置不全，解释不对的地方。还是我自己整理一个吧</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fail2Ban 不生效 解决错误'FilterPyinotify' object has no attribute ]]></title>
+        <id>https://lowjs.com/post/fail2ban-bu-sheng-xiao-jie-jue-cuo-wu-filterpyinotify-object-has-no-attribute/</id>
+        <link href="https://lowjs.com/post/fail2ban-bu-sheng-xiao-jie-jue-cuo-wu-filterpyinotify-object-has-no-attribute/">
+        </link>
+        <updated>2022-09-30T07:08:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>发现fail2ban 未生效，查看故障，发现'FilterPyinotify' object has no attribute 提示</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>发现fail2ban 未生效，查看故障，发现'FilterPyinotify' object has no attribute 提示</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu 服务器 53端口占用解决]]></title>
+        <id>https://lowjs.com/post/ubuntu-remove-53-occupy/</id>
+        <link href="https://lowjs.com/post/ubuntu-remove-53-occupy/">
+        </link>
+        <updated>2022-05-26T02:03:53.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="占用">占用</h2>
+<p>Ubuntu18 准备搭建adguard时发现，systemd-resolved服务占用了53端口，这个还能忍，干掉他。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="占用">占用</h2>
+<p>Ubuntu18 准备搭建adguard时发现，systemd-resolved服务占用了53端口，这个还能忍，干掉他。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[centos 6 换可用源]]></title>
+        <id>https://lowjs.com/post/centos-6-huan-ke-yong-yuan/</id>
+        <link href="https://lowjs.com/post/centos-6-huan-ke-yong-yuan/">
+        </link>
+        <updated>2022-02-17T01:45:04.000Z</updated>
+        <summary type="html"><![CDATA[<p>前几天重装一台13年的服务器<br>
+是联想软raid  megaraid的<br>
+试了centos7,centos8,debian11,ubuntu20等都不支持，尝试了安装驱动也不行，可能是驱动和系统版本不对应导致。<br>
+最终装回了centos6<br>
+centos6已经EOL了。所以原来的源都不可用了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>前几天重装一台13年的服务器<br>
+是联想软raid  megaraid的<br>
+试了centos7,centos8,debian11,ubuntu20等都不支持，尝试了安装驱动也不行，可能是驱动和系统版本不对应导致。<br>
+最终装回了centos6<br>
+centos6已经EOL了。所以原来的源都不可用了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[忍不住扒一下氨糖软骨素片价格]]></title>
+        <id>https://lowjs.com/post/ren-bu-zhu-ba-yi-xia-an-tang-ruan-gu-su-pian-jie-ge/</id>
+        <link href="https://lowjs.com/post/ren-bu-zhu-ba-yi-xia-an-tang-ruan-gu-su-pian-jie-ge/">
+        </link>
+        <updated>2021-04-21T06:12:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>因为常买，收到淘宝的推送这个，国产的不少氨糖软骨素越来越多了。偶尔也买过几个牌子的。总感觉不对，详细比对下指标。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>因为常买，收到淘宝的推送这个，国产的不少氨糖软骨素越来越多了。偶尔也买过几个牌子的。总感觉不对，详细比对下指标。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java生产代码热更新]]></title>
+        <id>https://lowjs.com/post/java-hot-reload/</id>
+        <link href="https://lowjs.com/post/java-hot-reload/">
+        </link>
+        <updated>2021-04-13T07:03:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用arthas对一段垃圾代码热更新去除。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用arthas对一段垃圾代码热更新去除。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LVM 拔除硬盘后，提示错误解决]]></title>
+        <id>https://lowjs.com/post/lvm-alert-after-remove-all-disks/</id>
+        <link href="https://lowjs.com/post/lvm-alert-after-remove-all-disks/">
+        </link>
+        <updated>2021-04-01T07:36:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>直接拔除硬盘 造成lvm 造成错误提示，相应的lv 也删除不掉<br>
+使用虚拟设备解决</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>直接拔除硬盘 造成lvm 造成错误提示，相应的lv 也删除不掉<br>
+使用虚拟设备解决</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ES 分词导致查询不到情况的解析]]></title>
+        <id>https://lowjs.com/post/Why_ES_can_not_find_my_word/</id>
+        <link href="https://lowjs.com/post/Why_ES_can_not_find_my_word/">
+        </link>
+        <updated>2021-01-14T01:38:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>分词问题导致查询不到举例解释说明</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>分词问题导致查询不到举例解释说明</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[群晖 安装 zerotier已及配置moon]]></title>
+        <id>https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/</id>
+        <link href="https://lowjs.com/post/synologo_install_zerotier_and_configure_moon/">
+        </link>
+        <updated>2020-12-07T02:43:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>如何在群晖上安装zerotier 和 配置moon的指南</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>如何在群晖上安装zerotier 和 配置moon的指南</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[群晖，安装第三方套件]]></title>
+        <id>https://lowjs.com/post/Synology_install_third_party_plugins/</id>
+        <link href="https://lowjs.com/post/Synology_install_third_party_plugins/">
+        </link>
+        <updated>2020-12-07T02:18:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>群晖，如何添加第三方套件介绍</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>群晖，如何添加第三方套件介绍</p>
+]]></content>
+    </entry>
+</feed>
